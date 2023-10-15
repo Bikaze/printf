@@ -10,8 +10,8 @@ int print_format(char c, va_list ap)
 {
 	int count = 0;
 
-	if (c == 0 || ap == 0)
-		return (0);
+	if (c == 0 || ap == 0 || c == ' ')
+		return (-1);
 
 	switch (c)
 	{
