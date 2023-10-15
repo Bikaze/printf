@@ -1,6 +1,5 @@
 #include "main.h"
 #include <ctype.h>
-/*int skip_space(const char *);*/
 /**
   *_printf - mini printf function (variadic function)
   *@format: format string
@@ -19,11 +18,11 @@ int _printf(const char *format, ...)
 	{
 		if (*(format) == '%')
 		{
-			/*int spaces = skip_space(format + 1);
-
-			format += spaces;*/
 			if (!*(format + 1))
+			{
+				va_end(ap);
 				return (-1);
+			}
 			count += print_format(*(++format), ap);
 		}
 		else
@@ -36,20 +35,3 @@ int _printf(const char *format, ...)
 	return (count);
 }
 
-/**
-  *skip_space - skip spaces
-  *@format: pointer to a character in the format string
-  *Return: the count of spaces
-  
-
-int skip_space(const char *format)
-{
-	int count = 0;
-
-	while (isspace(*format))
-	{
-		count++;
-		format++;
-	}
-	return (count);
-}*/
