@@ -24,9 +24,6 @@ int print_format(char c, va_list ap)
 		case '%':
 			count += _putchar('%');
 			break;
-		default:
-			count += _putchar('%');
-			count += _putchar(c);
 	}
 	return (count);
 }
