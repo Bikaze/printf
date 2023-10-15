@@ -25,7 +25,7 @@ int _printf(const char *format, ...)
 			if (!*(format + 1))
 			{
 				_putchar('%');
-				return (count + 1);
+				return (-1);
 			}
 			count += print_format(*(++format), ap);
 		}
