@@ -9,7 +9,7 @@ int print_str(char *str)
 	int count = 0;
 
 	if (!str)
-		return (0);
+		return (-1);
 	while (*str)
 	{
 		count += _putchar(*str);
