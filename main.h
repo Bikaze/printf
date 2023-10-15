@@ -1,7 +1,8 @@
-#ifndef PRINTF_H
-#define PRINTF_H
+#ifndef MAIN_H
+#define MAIN_H
+#include <stdarg.h>
+int _putchar(int);
+int print_str(char *);
+int print_format(char, va_list);
 int _printf(const char *format, ...);
-void _puts(char *str);
-int _putchar(char c);
-int _strlen(char *s);
 #endif

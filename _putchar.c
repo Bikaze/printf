@@ -1,9 +1,10 @@
-/* _putchar.c */
-
 #include <unistd.h>
-
-/* Custom _putchar function */
-int _putchar(char c) {
-    return write(1, &c, 1);
+/**
+  *_putchar - prints a character to the console
+  *@c: ascii code of the character
+  *Return: count of the output characters
+  */
+int _putchar(int c)
+{
+	return (write(1, &c, 1));
 }
-
