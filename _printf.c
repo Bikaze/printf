@@ -23,10 +23,7 @@ int _printf(const char *format, ...)
 
 			format += spaces;*/
 			if (!*(format + 1))
-			{
-				_putchar('%');
 				return (-1);
-			}
 			count += print_format(*(++format), ap);
 		}
 		else
