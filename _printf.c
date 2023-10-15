@@ -1,4 +1,3 @@
-#include <stdarg.h>
 #include "main.h"
 /**
   *_printf - mini printf function (variadic function)
@@ -20,8 +19,8 @@ int _printf(const char *format, ...)
 		{
 			if (*(format) == '%')
 			{
-				if (*(format + 1) == '\0')
-					return (-1);
+				if (*(format + 1) == '\0' || *(format + 1) == ' ')
+					break;
 				count += print_format(*(++format), ap);
 			}
 			else
