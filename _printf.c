@@ -4,10 +4,11 @@
   *@format: format string
   *Return: integer count of output characters
   */
+int skip_space(const char *);
 int _printf(const char *format, ...)
 {
 	va_list ap;
-	int count;
+	int count = 0;
 
 	if (!format)
 		return (-1);
