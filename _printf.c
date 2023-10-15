@@ -19,7 +19,7 @@ int _printf(const char *format, ...)
 		{
 			if (*(format) == '%')
 			{
-				if (!*(format + 1) || (*(format + 1) == ' ' && !*(format + 2))
+				if (!*(format + 1) || (*(format + 1) == ' ' && !*(format + 2)))
 					return (-1);
 				count += print_format(*(++format), ap);
 			}
