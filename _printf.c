@@ -1,4 +1,5 @@
 #include "main.h"
+#include "limits.h"
 /**
   *_printf - mini printf function (variadic function)
   *@format: format string
@@ -19,7 +20,7 @@ int _printf(const char *format, ...)
 		{
 			if (*(format) == '%')
 			{
-				if (*(format + 1) == '\0' || *(format + 1) == ' ')
+				if (!*(format + 1) || *(format + 1) == ' ')
 					return (-1);
 				count += print_format(*(++format), ap);
 			}
