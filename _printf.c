@@ -10,6 +10,9 @@ int _printf(const char *format, ...)
 	va_list ap;
 	int count;
 
+	if (!format)
+		exit(-1);
+
 	va_start(ap, format);
 	if (format)
 	{
