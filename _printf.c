@@ -12,7 +12,7 @@ int _printf(const char *format, ...)
 	int count = 0;
 
 	if (!format)
-		return (-1);
+		return (0);
 
 	va_start(ap, format);
 	while (*format)
