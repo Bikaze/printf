@@ -10,8 +10,8 @@ int print_format(char c, va_list ap)
 {
 	int count = 0;
 
-	if (ap == 0)
-		return (-1);
+	/*if (ap == 0)
+		return (-1);*/
 
 	switch (c)
 	{
@@ -23,6 +23,12 @@ int print_format(char c, va_list ap)
 			break;
 		case '%':
 			count += _putchar('%');
+			break;
+		case 'd':
+			count += print_int((long)va_arg(ap, int), 10);
+			break;
+		case 'i':
+			count += print_i(va_arg(ap, int));
 			break;
 		default:
 			count += _putchar('%');
