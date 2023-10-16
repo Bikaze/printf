@@ -24,12 +24,6 @@ int print_format(char c, va_list ap)
 		case '%':
 			count += _putchar('%');
 			break;
-		case 'd':
-			count += print_int((long)va_arg(ap, int), 10);
-			break;
-		case 'i':
-			count += print_i(va_arg(ap, int));
-			break;
 		default:
 			count += _putchar('%');
 			count += _putchar(c);
