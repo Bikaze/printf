@@ -27,6 +27,8 @@ int print_format(char c, va_list ap)
 		count += print_number((long)(va_arg(ap, unsigned int)), 8);
 	else if (c == 'u')
 		count += print_number((long)(va_arg(ap, unsigned int)), 10);
+	else if (c == 'b')
+		count += print_number((long)(va_arg(ap, unsigned int)), 2);
 	else if (c == 'x')
 		count += print_number((long)(va_arg(ap, unsigned int)), 16);
 	else if (c == 'X')
