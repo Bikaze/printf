@@ -13,21 +13,28 @@ int print_format(char c, va_list ap)
 	if (ap == 0)
 		return (-1);
 
-	switch (c)
+	if (c == 'c')
+		count += _putchar(va_arg(ap, int));
+	else if (c == 's')
+		count += print_str(va_arg(ap, char *));
+	else if (c == '%')
+		count += _putchar('%');
+	else if (c == 'd')
+		count += print_number((long)(va_arg(ap, int)), 10);
+	else if (c == 'i')
+		count += print_number((long)(va_arg(ap, int)), 10);
+	else if (c == 'o')
+		count += print_number((long)(va_arg(ap, unsigned int)), 8);
+	else if (c == 'u')
+		count += print_number((long)(va_arg(ap, unsigned int)), 10);
+	else if (c == 'x')
+		count += print_number((long)(va_arg(ap, unsigned int)), 16);
+	else if (c == 'X')
+		count += print_X((long)(va_arg(ap, unsigned int)));
+	else
 	{
-		case 'c':
-			count += _putchar(va_arg(ap, int));
-			break;
-		case 's':
-			count += print_str(va_arg(ap, char *));
-			break;
-		case '%':
-			count += _putchar('%');
-			break;
-		default:
-			count += _putchar('%');
-			count += _putchar(c);
-			break;
+		count += _putchar('%');
+		count += _putchar(c);
 	}
 	return (count);
 }
